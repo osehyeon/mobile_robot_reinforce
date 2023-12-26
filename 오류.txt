@@ -1,0 +1,35 @@
+[ML-agents 오류] 
+
+[install 명령어]
+
+pip install -e . 
+
+[version]
+
+Unity: 2019.1 >> Unity: 2019.4 [사유: yaml Error]
+Python: 3.6 
+Tensorflow: 1.12.0 +> numpy==1.16.4 
+ML-Agents: 0.8.1
+
+
+[Start Program]
+
+mlagents-learn trainer_config.yaml --run-id=firstRun --train --slow
+
+[Error]
+
+mlagents.trainers.buffer.BufferException: Unable to shuffle if the fields are not of same length
+[Solution] pip install numpy==1.14.1 [tensorflow 및 numpy 호환성 문제]
+
+: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; 
+in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+[Solution] pip install numpy==1.16.4 
+
+TypeError: load() missing 1 required positional argument: 'Loader'
+[Solution] pip install pyyaml==5.4.1 [6.0 to 5.4.1] 
+
+[Essential Library Version]
+[1번]
+numpy==1.14.1
+
+
